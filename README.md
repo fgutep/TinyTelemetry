@@ -1,14 +1,14 @@
 # TinyTelemetry
-A very simple, arduino based telemetry system for recording the maximum historic altitude and time of flight for model rocketry and airplane models in a blackbox payload style. The upcoming of this project occurred by the need to obtain the maximum altitude and flight time for a model rocket, while keeping it as light, and small as possible. As far as i'm concerned you can shrink this further by using an even smaller board such as the Seeduino, and soldering everything as tightly as possible into a motherboard, the main trouble with weight and volume is the battery, while you can power this with 4 AAAs or a single 9V (depending which form factor suits you best) it would be ideal to have a single, tiny lithium cell, which if you have the chance to do I would encorage you to do so.
+A very simple, arduino based telemetry system for recording the maximum historic altitude and time of flight for model rocketry and airplane models in a blackbox payload style. The upcoming of this project occurred by the need to obtain the maximum altitude and flight time for a model rocket, while keeping it as light, and small as possible. As far as i'm concerned you can shrink this further by using an even smaller board such as the Seeduino, and soldering everything as tightly as possible into a motherboard, the main trouble with weight and volume is the battery, while you can power this with 4 AAAs or a single 9V (depending which form factor suits you best) it would be ideal to have a single, tiny lithium cell, which if you have the chance to do I would encourage you to do so.
 
-I attempted (and will continue to attempt, yet probably not upload unless this project gains some attention) to add to this system an acelerometer, the MPU6050, the reason being that the current way to count time relies only on the barometric sensor BMP2080, detecting lift-off and crashing by a change in Δaltitude readings, which fluctuates overtime with barometric pressure and needs at least a 1 meter increment to start counting (as programed in V1.8, may be fine-tuned later) and for it to land in the range of initial_altitude-1m<initial_altitude<initial_altitude+1m 
-`(A-1 <= A <= A+1)`, else it will not stop counting, the accelerometer would allow for MUCH more precise time recording, even adding a extra layer of verification and redundancy to max_alt recording by using aceleration data.
+I attempted (and will continue to attempt, yet probably not upload unless this project gains some attention) to add to this system an accelerometer, the MPU6050, the reason being that the current way to count time relies only on the barometric sensor BMP2080, detecting lift-off and crashing by a change in Δaltitude readings, which fluctuates overtime with barometric pressure and needs at least a 1 meter increment to start counting (as programed in V1.8, may be fine-tuned later) and for it to land in the range of initial_altitude-1m<initial_altitude<initial_altitude+1m 
+`(A-1 <= A <= A+1)`, else it will not stop counting, the accelerometer would allow for MUCH more precise time recording, even adding a extra layer of verification and redundancy to max_alt recording by using acceleration data.
 
 ## Pros & Cons of the actual version:
 
 ### Pros:
 - Very easy to make for beginners.
-- Comented code to make it easy to understand.
+- Commented code to make it easy to understand.
 - Cheap project (under USD 15$).
 - Can be used as a base for you to modify to your need.
 - Complete with full instructions on how to.
@@ -18,7 +18,7 @@ I attempted (and will continue to attempt, yet probably not upload unless this p
 - Lacks altitude precision for long flights.
 - Expected to be retrived at landing (no data broadcast).
 
-> If you make advances based on this code and achieve better results, or add helpful support for sensors (such as the acelerometer) ot tyni-er boards, please do share!.
+> If you make advances based on this code and achieve better results, or add helpful support for sensors (such as the accelerometer) or for tyni-er boards, please do share!
 
 ## Instructions, how to:
 1. Download all files.
@@ -39,5 +39,5 @@ I attempted (and will continue to attempt, yet probably not upload unless this p
 16. Connect the arduino by USB to your PC, and select whatever there is on >Tools > Port > Com(#).
 17. Flash the code to the arduino using the arrow logo next to the check mark (compile).
 18. Done, it should work now.
-19. IF YOU USED A DIFERENT OLED, you'll need to change the pixer ratio on `#define SCREEN_WIDTH` `#define SCREEN_HEIGHT`, and on the display code, where commented as (x,y). Until it looks good.
-20. Should be done, enjoy your TynyTelemetry :D.
+19. IF YOU USED A DIFFERENT OLED, you'll need to change the pixer ratio on `#define SCREEN_WIDTH` `#define SCREEN_HEIGHT`, and on the display code, where commented as (x,y). Until it looks good.
+20. Should be done, enjoy your TinyTelemetry :D.
